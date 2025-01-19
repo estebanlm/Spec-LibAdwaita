@@ -1,3 +1,6 @@
+"
+https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.ApplicationWindow.html
+"
 Class {
 	#name : 'AdwApplicationWindow',
 	#superclass : 'GtkApplicationWindow',
