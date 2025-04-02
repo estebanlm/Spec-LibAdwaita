@@ -9,7 +9,7 @@ Class {
 { #category : 'accessing - platform' }
 AdwLibrary >> macLibraryName [
 
-	^ self error: 'TODO' "GMacLibraryFinder findLibrary: 'libgtk-4.dylib'"
+	^ GMacLibraryFinder findLibrary: 'libadwaita-1.0.dylib'
 ]
 
 { #category : 'accessing - platform' }
