@@ -21,5 +21,5 @@ AdwLibrary >> unix64LibraryName [
 { #category : 'accessing - platform' }
 AdwLibrary >> win32LibraryName [
 
-	^ self error: 'TODO' "FIWindowsLibraryFinder findLibrary: 'libgobject-2.0-0.dll'"
+	^ FFIWindowsLibraryFinder findLibrary: 'libadwaita-1-0.dll'
 ]
