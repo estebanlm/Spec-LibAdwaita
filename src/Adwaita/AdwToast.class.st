@@ -6,6 +6,9 @@ Class {
 	#superclass : 'GObject',
 	#traits : 'AdwTLibrary',
 	#classTraits : 'AdwTLibrary classTrait',
+	#instVars : [
+		'customTitle'
+	],
 	#category : 'Adwaita-Widget',
 	#package : 'Adwaita',
 	#tag : 'Widget'
@@ -36,6 +39,50 @@ AdwToast class >> newTitle: aString [
 ]
 
 { #category : 'accessing' }
+AdwToast >> customTitle [
+
+	"if it is not set, it does not has sense to ask for it"
+	^ customTitle
+]
+
+{ #category : 'accessing' }
+AdwToast >> customTitle: aWidget [
+
+	customTitle := aWidget.
+	self setCustomTitle: aWidget
+]
+
+{ #category : 'api' }
+AdwToast >> dismiss [
+
+	self ffiCall: #(void adw_toast_dismiss (self))
+]
+
+{ #category : 'testing' }
+AdwToast >> isUseMarkup [
+
+	^ self ffiCall: #(gboolean adw_toast_get_use_markup (self))
+]
+
+{ #category : 'private' }
+AdwToast >> setCustomTitle: widget [
+
+	self ffiCall: #(void adw_toast_set_custom_title (self, GtkWidget* widget))
+]
+
+{ #category : 'accessing' }
+AdwToast >> timeout [
+
+	^ self ffiCall: #(guint adw_toast_get_timeout (self))
+]
+
+{ #category : 'accessing' }
+AdwToast >> timeout: timeout [
+
+	^ self ffiCall: #(void adw_toast_set_timeout (self, guint timeout))
+]
+
+{ #category : 'accessing' }
 AdwToast >> title [
 
 	^ self ffiCall: #(char* adw_toast_get_title (self))
@@ -46,4 +93,10 @@ AdwToast >> title: title [
 
 	self ffiCall: #(void adw_toast_set_title (self, const char* title))
 
+]
+
+{ #category : 'accessing' }
+AdwToast >> useMarkup: use_markup [
+
+	self ffiCall: #(void adw_toast_set_use_markup (self, gboolean use_markup))
 ]
