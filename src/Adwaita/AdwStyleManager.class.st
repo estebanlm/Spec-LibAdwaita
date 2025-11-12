@@ -3,7 +3,7 @@ https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.StyleManager.html
 "
 Class {
 	#name : 'AdwStyleManager',
-	#superclass : 'GBaseObject',
+	#superclass : 'GObject',
 	#traits : 'AdwTLibrary',
 	#classTraits : 'AdwTLibrary classTrait',
 	#pools : [
@@ -32,6 +32,10 @@ AdwStyleManager >> accentColorRGBA [
 	^ self ffiCall: #(GdkRGBA* adw_style_manager_get_accent_color_rgba (self))
 ]
 
+{ #category : 'initialization' }
+AdwStyleManager >> autoObjectUnref [
+]
+
 { #category : 'accessing' }
 AdwStyleManager >> colorScheme [
 
@@ -42,6 +46,17 @@ AdwStyleManager >> colorScheme [
 AdwStyleManager >> colorScheme: color_scheme [
 
 	self ffiCall: #(void adw_style_manager_set_color_scheme (self, AdwColorScheme color_scheme))
+]
+
+{ #category : 'signaling' }
+AdwStyleManager >> connectNotifyDark: aBlock [
+	"a callback to listen when the dark/white theme are activated"
+	
+	^ self 
+		connect: 'notify::dark'
+		signature: #(void (void *object, void *pspec, gpointer user_data))
+		do: [ :object :pspec :user_data | aBlock value ]
+
 ]
 
 { #category : 'accessing' }
