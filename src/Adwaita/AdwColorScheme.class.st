@@ -5,6 +5,7 @@ Class {
 	#name : 'AdwColorScheme',
 	#superclass : 'GEnumeration',
 	#classVars : [
+		'ADW_COLOR_SCHEME_DEFAULT',
 		'ADW_COLOR_SCHEME_FORCE_DARK',
 		'ADW_COLOR_SCHEME_FORCE_LIGHT',
 		'ADW_COLOR_SCHEME_PREFER_DARK',
@@ -14,6 +15,12 @@ Class {
 	#package : 'Adwaita',
 	#tag : 'Widget'
 }
+
+{ #category : 'accessing enum' }
+AdwColorScheme class >> ADW_COLOR_SCHEME_DEFAULT [
+	"This method was automatically generated"
+	^ ADW_COLOR_SCHEME_DEFAULT
+]
 
 { #category : 'accessing enum' }
 AdwColorScheme class >> ADW_COLOR_SCHEME_FORCE_DARK [
@@ -47,7 +54,7 @@ AdwColorScheme class >> enumDecl [
 	"
 
 	^ #(
-	ADW_COLOR_SCHEME_PREFER_LIGHT 	0
+	ADW_COLOR_SCHEME_DEFAULT 		0
 	ADW_COLOR_SCHEME_FORCE_LIGHT 	1
 	ADW_COLOR_SCHEME_PREFER_LIGHT 	2
 	ADW_COLOR_SCHEME_PREFER_DARK 	3
