@@ -108,3 +108,9 @@ AdwStyleManager >> preferLight [
 
 	self colorScheme: ADW_COLOR_SCHEME_PREFER_LIGHT
 ]
+
+{ #category : 'accessing' }
+AdwStyleManager >> preferSystem [
+
+	self colorScheme: ADW_COLOR_SCHEME_DEFAULT
+]
