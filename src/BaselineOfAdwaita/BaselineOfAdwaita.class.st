@@ -12,8 +12,7 @@ BaselineOfAdwaita >> baseline: spec [
 	spec for: #common do: [
 		self specGtk: spec. 
 		spec 
-			package: 'Adwaita'; 
-			package: 'Spec-Adwaita' ]
+			package: 'Adwaita' ]
 ]
 
 { #category : 'external projects' }
