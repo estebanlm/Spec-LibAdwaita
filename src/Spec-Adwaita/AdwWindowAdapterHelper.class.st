@@ -24,6 +24,13 @@ AdwWindowAdapterHelper >> add: aWidget toWindow: aWindow [
 		yourself)
 ]
 
+{ #category : 'accessing' }
+AdwWindowAdapterHelper >> destroy: gtkWindow [
+	
+	gtkWindow isNullOrNil 
+		ifFalse: [ self error: 'This should be NULL now' ]
+]
+
 { #category : 'initialization' }
 AdwWindowAdapterHelper >> initialize [
 
