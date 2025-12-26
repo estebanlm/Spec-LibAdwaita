@@ -1,3 +1,7 @@
+"
+https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/class.Dialog.html
+
+"
 Class {
 	#name : 'AdwDialog',
 	#superclass : 'GtkWindow',
@@ -18,4 +22,10 @@ AdwDialog class >> gtkNew [
 AdwDialog class >> new [
 
 	^ self gtkNew initialize
+]
+
+{ #category : 'private' }
+AdwDialog >> setDefaultWidget: default_widget [
+
+	self ffiCall: #(void adw_dialog_set_default_widget (self, GtkWidget* default_widget))
 ]
