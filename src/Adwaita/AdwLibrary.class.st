@@ -15,7 +15,7 @@ AdwLibrary >> macLibraryName [
 { #category : 'accessing - platform' }
 AdwLibrary >> unix64LibraryName [ 
 
-	^ FFIUnix64LibraryFinder findLibrary: 'libadwaita-1.so'
+	^ FFIUnix64LibraryFinder findAnyLibrary: #('libadwaita-1.so' 'libadwaita-1.so.0')
 ]
 
 { #category : 'accessing - platform' }
