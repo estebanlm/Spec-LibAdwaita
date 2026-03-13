@@ -35,7 +35,8 @@ AdwWindowAdapterHelper >> destroy: gtkWindow [
 AdwWindowAdapterHelper >> initialize [
 
 	super initialize.
-	headerBar := AdwHeaderBar new
+	headerBar := GRunLoop defer: [ AdwHeaderBar new ]
+
 ]
 
 { #category : 'accessing' }
