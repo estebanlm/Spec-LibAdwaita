@@ -92,6 +92,12 @@ AdwStyleManager >> isDark [
 ]
 
 { #category : 'testing' }
+AdwStyleManager >> isHighContrast [
+
+	self ffiCall: #(gboolean adw_style_manager_get_high_contrast (self))
+]
+
+{ #category : 'testing' }
 AdwStyleManager >> isHighlight [
 
 	^ self ffiCall: #(gboolean adw_style_manager_get_highlight (self))
