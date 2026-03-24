@@ -25,6 +25,12 @@ AdwWindowAdapterHelper >> add: aWidget toWindow: aWindow [
 ]
 
 { #category : 'accessing' }
+AdwWindowAdapterHelper >> addWindowControl: gtkWidget in: gtkWindow [
+
+	headerBar packEnd: gtkWidget
+]
+
+{ #category : 'accessing' }
 AdwWindowAdapterHelper >> destroy: gtkWindow [
 	
 	gtkWindow isNullOrNil 
@@ -37,6 +43,12 @@ AdwWindowAdapterHelper >> initialize [
 	super initialize.
 	headerBar := GRunLoop defer: [ AdwHeaderBar new ]
 
+]
+
+{ #category : 'instance creation' }
+AdwWindowAdapterHelper >> newActionManager [
+
+	^ AdwAdapterActionWindowManager on: self owner
 ]
 
 { #category : 'accessing' }
