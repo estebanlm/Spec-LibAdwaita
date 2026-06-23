@@ -27,6 +27,12 @@ AdwStyleManager class >> getDefault [
 ]
 
 { #category : 'accessing' }
+AdwStyleManager >> accentColor [
+
+	^ self accentColorRGBA asColor
+]
+
+{ #category : 'accessing' }
 AdwStyleManager >> accentColorRGBA [
 
 	^ self ffiCall: #(GdkRGBA* adw_style_manager_get_accent_color_rgba (self))
