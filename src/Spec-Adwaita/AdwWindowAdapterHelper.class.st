@@ -34,7 +34,7 @@ AdwWindowAdapterHelper >> addWindowControl: gtkWidget in: gtkWindow [
 AdwWindowAdapterHelper >> destroy: gtkWindow [
 	
 	gtkWindow isNullOrNil 
-		ifFalse: [ self error: 'This should be NULL now' ]
+		ifFalse: [ logger warning: 'This should be NULL now' ]
 ]
 
 { #category : 'initialization' }
